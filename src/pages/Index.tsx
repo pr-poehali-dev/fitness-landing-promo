@@ -19,9 +19,7 @@ const Index = () => {
 
       {/* HEADER */}
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5" style={{ borderBottom: "1px solid rgba(201,169,110,0.1)", backdropFilter: "blur(20px)", backgroundColor: "rgba(15,13,11,0.85)" }}>
-        <div className="text-xl tracking-[0.3em] font-light" style={{ fontFamily: "Cormorant, serif", color: "var(--gold)" }}>
-          L.A.B SPACE
-        </div>
+        <img src="https://cdn.poehali.dev/projects/784e500c-647e-4a7e-95e1-934647152c05/bucket/ce79b859-f951-4144-8aa4-44a3e420eee5.png" alt="LAB SPACE" className="h-8 w-auto" />
         <nav className="hidden md:flex items-center gap-8">
           {[
             { label: "Акция", href: "#акция" },
@@ -339,9 +337,7 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="py-10 px-8" style={{ borderTop: "1px solid var(--border)", backgroundColor: "var(--dark)" }}>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-xl tracking-[0.3em] font-light" style={{ fontFamily: "Cormorant, serif", color: "var(--gold)" }}>
-            L.A.B SPACE
-          </div>
+          <img src="https://cdn.poehali.dev/projects/784e500c-647e-4a7e-95e1-934647152c05/bucket/ce79b859-f951-4144-8aa4-44a3e420eee5.png" alt="LAB SPACE" className="h-7 w-auto" />
           <p className="text-xs" style={{ color: "var(--text-muted)", fontFamily: "Golos Text" }}>© 2024 LAB SPACE. Все права защищены.</p>
           <div className="flex gap-6">
             {["ВКонтакте", "Instagram", "Telegram"].map((s) => (
