@@ -86,11 +86,21 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="absolute right-12 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center justify-center w-40 h-40 rounded-full"
-            style={{ border: "1px solid var(--accent-color)", backgroundColor: "rgba(254,12,246,0.06)" }}>
-            <span className="text-5xl font-black leading-none" style={{ fontFamily: M, color: A }}>+3</span>
-            <span className="text-xs mt-1 tracking-wider uppercase font-semibold" style={{ color: "var(--text-muted)", fontFamily: M }}>месяца</span>
-            <span className="text-xs tracking-wider uppercase font-semibold" style={{ color: "var(--text-muted)", fontFamily: M }}>бесплатно</span>
+          <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:block" style={{ width: "420px" }}>
+            <div className="relative">
+              <div className="absolute inset-0 rounded-2xl" style={{ background: "radial-gradient(circle at center, rgba(254,12,246,0.3) 0%, transparent 70%)", filter: "blur(40px)" }} />
+              <img
+                src="https://cdn.poehali.dev/projects/784e500c-647e-4a7e-95e1-934647152c05/files/4fee6c7a-dfe5-43e1-a5c0-118b62ac5003.jpg"
+                alt="3 месяца в подарок"
+                className="relative w-full rounded-2xl"
+                style={{ boxShadow: "0 0 60px rgba(254,12,246,0.2)", border: "1px solid rgba(254,12,246,0.2)" }}
+              />
+              <div className="absolute -bottom-4 -right-4 flex flex-col items-center justify-center w-24 h-24 rounded-full"
+                style={{ backgroundColor: A, boxShadow: "0 0 30px rgba(254,12,246,0.5)" }}>
+                <span className="text-2xl font-black leading-none" style={{ fontFamily: M, color: "#fff" }}>+3</span>
+                <span className="text-xs font-bold" style={{ fontFamily: M, color: "#fff" }}>мес.</span>
+              </div>
+            </div>
           </div>
         </div>
 
