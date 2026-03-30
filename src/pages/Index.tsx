@@ -293,43 +293,56 @@ const Index = () => {
       </section>
 
       {/* ОТЗЫВЫ */}
-      <section id="отзывы" className="py-28 px-8" style={{ backgroundColor: "var(--dark-3)" }}>
+      <section id="отзывы" className="py-28 px-8" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <span className="section-label block mb-4">Клиенты о нас</span>
-            <h2 className="font-black uppercase" style={{ fontFamily: M, fontSize: "clamp(2rem, 4vw, 3rem)" }}>Отзывы</h2>
+
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <span className="section-label block mb-4" style={{ color: A }}>Клиенты о нас</span>
+              <h2 className="font-black uppercase" style={{ fontFamily: M, fontSize: "clamp(2rem, 4vw, 3rem)", color: "#0a0a0a" }}>Отзывы</h2>
+            </div>
+            <div className="flex items-center gap-2">
+              {Array.from({ length: 5 }).map((_, j) => (
+                <span key={j} style={{ color: A, fontSize: "22px" }}>★</span>
+              ))}
+              <span className="ml-2 font-black text-2xl" style={{ fontFamily: M, color: "#0a0a0a" }}>5.0</span>
+              <span className="ml-1 text-sm" style={{ color: "#999", fontFamily: M }}>/ 5</span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { name: "Светлана К.", since: "Клиент с 2022", text: "Занимаюсь уже два года. Атмосфера потрясающая — камерная, тёплая, без суеты большого зала. Тренеры профессиональные и внимательные. Стретчинг изменил моё тело за 3 месяца." },
-              { name: "Ирина М.", since: "Клиент с 2023", text: "Пришла по акции на пробное занятие — и осталась. Качество тренировок выше, чем в крупных фитнес-клубах, а цена при этом честная. Рекомендую всем подругам!" },
-              { name: "Ольга Д.", since: "Клиент с 2024", text: "Очень удобное расписание — успеваю до работы. Тренер по йоге Анна — просто находка, объясняет каждую позицию. Пространство красиво оформлено, хочется возвращаться снова." },
+              { name: "Светлана К.", since: "Клиент с 2022", text: "Занимаюсь уже два года. Атмосфера потрясающая — камерная, тёплая, без суеты большого зала. Тренеры профессиональные и внимательные. Стретчинг изменил моё тело за 3 месяца.", highlight: true },
+              { name: "Ирина М.", since: "Клиент с 2023", text: "Пришла по акции на пробное занятие — и осталась. Качество тренировок выше, чем в крупных фитнес-клубах, а цена при этом честная. Рекомендую всем подругам!", highlight: false },
+              { name: "Ольга Д.", since: "Клиент с 2024", text: "Очень удобное расписание — успеваю до работы. Тренер по йоге Анна — просто находка, объясняет каждую позицию. Пространство красиво оформлено, хочется возвращаться снова.", highlight: false },
             ].map((r, i) => (
-              <div key={i} className="p-8 card-hover"
-                style={{ backgroundColor: "var(--dark-2)", border: "1px solid var(--border)", borderRadius: "2px" }}>
-                <div className="flex gap-1 mb-6">
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <span key={j} style={{ color: A, fontSize: "14px" }}>★</span>
-                  ))}
+              <div key={i} className="rounded-3xl p-8 flex flex-col justify-between"
+                style={{ backgroundColor: r.highlight ? "#0a0a0a" : "#f5f5f5", minHeight: "280px" }}>
+                <div>
+                  <div className="flex gap-1 mb-5">
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <span key={j} style={{ color: A, fontSize: "13px" }}>★</span>
+                    ))}
+                  </div>
+                  <blockquote className="text-sm leading-relaxed font-light mb-8"
+                    style={{ color: r.highlight ? "rgba(255,255,255,0.8)" : "#444", fontFamily: M }}>
+                    «{r.text}»
+                  </blockquote>
                 </div>
-                <blockquote className="text-sm leading-relaxed mb-8 font-light italic"
-                  style={{ color: "var(--text-primary)", fontFamily: M }}>
-                  «{r.text}»
-                </blockquote>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold"
-                    style={{ backgroundColor: "rgba(254,12,246,0.12)", color: A, fontFamily: M, fontSize: "1rem" }}>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
+                    style={{ backgroundColor: r.highlight ? "rgba(254,12,246,0.2)" : "#ffffff", color: A, fontFamily: M, boxShadow: r.highlight ? "none" : "0 2px 10px rgba(0,0,0,0.08)" }}>
                     {r.name[0]}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold" style={{ fontFamily: M }}>{r.name}</p>
-                    <p className="text-xs" style={{ color: "var(--text-muted)", fontFamily: M }}>{r.since}</p>
+                    <p className="text-sm font-semibold" style={{ fontFamily: M, color: r.highlight ? "#ffffff" : "#0a0a0a" }}>{r.name}</p>
+                    <p className="text-xs" style={{ color: r.highlight ? "rgba(255,255,255,0.4)" : "#999", fontFamily: M }}>{r.since}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
