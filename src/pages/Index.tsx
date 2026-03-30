@@ -111,35 +111,87 @@ const Index = () => {
       </section>
 
       {/* ПРЕИМУЩЕСТВА */}
-      <section className="py-28 px-8" style={{ backgroundColor: "#ffffff" }}>
+      <section className="py-28 px-8 overflow-hidden" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <span className="section-label block mb-4" style={{ color: A }}>Почему LAB SPACE</span>
-            <h2 className="font-black uppercase" style={{ fontFamily: M, fontSize: "clamp(2rem, 4vw, 3rem)", color: "#0a0a0a" }}>Преимущества студии</h2>
+
+          {/* Заголовок + большая цифра */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+            <div>
+              <span className="section-label block mb-4" style={{ color: A }}>Почему LAB SPACE</span>
+              <h2 className="font-black uppercase" style={{ fontFamily: M, fontSize: "clamp(2rem, 4vw, 3rem)", color: "#0a0a0a" }}>Преимущества<br />студии</h2>
+            </div>
+            <div className="flex items-end gap-6">
+              <div className="text-center">
+                <div className="font-black leading-none" style={{ fontFamily: M, fontSize: "4rem", color: "#0a0a0a" }}>12+</div>
+                <div className="text-xs tracking-widest uppercase mt-1" style={{ color: "#999", fontFamily: M }}>направлений</div>
+              </div>
+              <div className="text-center">
+                <div className="font-black leading-none" style={{ fontFamily: M, fontSize: "4rem", color: "#0a0a0a" }}>5★</div>
+                <div className="text-xs tracking-widest uppercase mt-1" style={{ color: "#999", fontFamily: M }}>рейтинг</div>
+              </div>
+              <div className="text-center">
+                <div className="font-black leading-none" style={{ fontFamily: M, fontSize: "4rem", color: "#0a0a0a" }}>3</div>
+                <div className="text-xs tracking-widest uppercase mt-1" style={{ color: "#999", fontFamily: M }}>тренера</div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style={{ border: "1px solid #e5e5e5" }}>
-            {[
-              { icon: "Dumbbell", title: "12+ направлений", text: "Йога, стретчинг, TRX, пилатес, табата, МФР — найдёте то, что подходит именно вам" },
-              { icon: "Users", title: "Малые группы", text: "До 12 человек в группе — тренер уделяет внимание каждому и контролирует технику" },
-              { icon: "MapPin", title: "Удобное расположение", text: "В 5 минутах от метро. Занимайтесь без лишних трат времени на дорогу" },
-              { icon: "Star", title: "Опытные тренеры", text: "Сертифицированные специалисты с опытом от 5 лет. Индивидуальный подход" },
-              { icon: "Calendar", title: "Гибкое расписание", text: "Тренировки утром, днём и вечером. Легко совместить с работой и семьёй" },
-              { icon: "Shield", title: "Безопасные тренировки", text: "Программы адаптированы под уровень подготовки. Подойдёт с нуля" },
-            ].map((item, i) => (
-              <div key={i} className="p-10"
-                style={{ backgroundColor: "#ffffff", borderRight: "1px solid #e5e5e5", borderBottom: "1px solid #e5e5e5" }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#fafafa")}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#ffffff")}>
-                <div className="w-10 h-10 flex items-center justify-center mb-6"
-                  style={{ backgroundColor: "rgba(254,12,246,0.08)", border: "1px solid rgba(254,12,246,0.25)", borderRadius: "2px" }}>
-                  <Icon name={item.icon} fallback="Star" size={18} style={{ color: A }} />
+          {/* Большая карточка + три маленьких */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
+            {/* Большая карточка */}
+            <div className="rounded-3xl p-10 flex flex-col justify-between relative overflow-hidden" style={{ backgroundColor: "#0a0a0a", minHeight: "340px" }}>
+              <div className="absolute -right-10 -bottom-10 w-64 h-64 rounded-full" style={{ background: "radial-gradient(circle, rgba(254,12,246,0.3) 0%, transparent 70%)" }} />
+              <div className="w-12 h-12 flex items-center justify-center mb-8" style={{ backgroundColor: "rgba(254,12,246,0.12)", borderRadius: "12px" }}>
+                <Icon name="Dumbbell" size={22} style={{ color: A }} />
+              </div>
+              <div>
+                <h3 className="font-black uppercase mb-3" style={{ fontFamily: M, fontSize: "1.5rem", color: "#ffffff" }}>12+ направлений</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)", fontFamily: M, maxWidth: "320px" }}>Йога, стретчинг, TRX, пилатес, табата, МФР — найдёте то, что подходит именно вам</p>
+              </div>
+            </div>
+
+            {/* Две карточки справа */}
+            <div className="grid grid-cols-1 gap-5">
+              <div className="rounded-3xl p-8 flex items-center gap-6 relative overflow-hidden" style={{ backgroundColor: "#f5f5f5" }}>
+                <div className="w-14 h-14 flex-shrink-0 flex items-center justify-center rounded-2xl" style={{ backgroundColor: "#ffffff", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
+                  <Icon name="Users" size={24} style={{ color: A }} />
                 </div>
-                <h3 className="mb-3 font-bold uppercase text-base" style={{ fontFamily: M, color: "#0a0a0a" }}>{item.title}</h3>
-                <p className="text-sm leading-relaxed font-light" style={{ color: "#666666", fontFamily: M }}>{item.text}</p>
+                <div>
+                  <h3 className="font-bold uppercase mb-1" style={{ fontFamily: M, color: "#0a0a0a" }}>Малые группы</h3>
+                  <p className="text-sm" style={{ color: "#666", fontFamily: M }}>До 12 человек — тренер уделяет внимание каждому</p>
+                </div>
+              </div>
+              <div className="rounded-3xl p-8 flex items-center gap-6" style={{ backgroundColor: "#f5f5f5" }}>
+                <div className="w-14 h-14 flex-shrink-0 flex items-center justify-center rounded-2xl" style={{ backgroundColor: "#ffffff", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
+                  <Icon name="MapPin" size={24} style={{ color: A }} />
+                </div>
+                <div>
+                  <h3 className="font-bold uppercase mb-1" style={{ fontFamily: M, color: "#0a0a0a" }}>5 минут от метро</h3>
+                  <p className="text-sm" style={{ color: "#666", fontFamily: M }}>Занимайтесь без лишних трат времени на дорогу</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Три карточки снизу */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              { icon: "Star", title: "Опытные тренеры", text: "Сертифицированные специалисты с опытом от 5 лет", accent: true },
+              { icon: "Calendar", title: "Гибкое расписание", text: "Утром, днём и вечером — легко совместить с жизнью", accent: false },
+              { icon: "Shield", title: "Безопасно с нуля", text: "Программы адаптированы под любой уровень подготовки", accent: false },
+            ].map((item, i) => (
+              <div key={i} className="rounded-3xl p-8 relative overflow-hidden"
+                style={{ backgroundColor: item.accent ? A : "#f5f5f5" }}>
+                <div className="w-12 h-12 flex items-center justify-center mb-6 rounded-2xl"
+                  style={{ backgroundColor: item.accent ? "rgba(255,255,255,0.15)" : "#ffffff", boxShadow: item.accent ? "none" : "0 4px 20px rgba(0,0,0,0.08)" }}>
+                  <Icon name={item.icon} fallback="Star" size={20} style={{ color: item.accent ? "#ffffff" : A }} />
+                </div>
+                <h3 className="font-bold uppercase mb-2" style={{ fontFamily: M, color: item.accent ? "#ffffff" : "#0a0a0a" }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: item.accent ? "rgba(255,255,255,0.75)" : "#666", fontFamily: M }}>{item.text}</p>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
