@@ -4,44 +4,44 @@
 
 @layer base {
   :root {
-    --background: 20 10% 6%;
-    --foreground: 40 20% 94%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 20 8% 9%;
-    --card-foreground: 40 20% 94%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 20 8% 9%;
-    --popover-foreground: 40 20% 94%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 35 60% 68%;
-    --primary-foreground: 20 10% 6%;
+    --primary: 302 99% 51%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 20 8% 14%;
-    --secondary-foreground: 40 20% 94%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 20 8% 14%;
-    --muted-foreground: 40 10% 55%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 50%;
 
-    --accent: 35 60% 68%;
-    --accent-foreground: 20 10% 6%;
+    --accent: 302 99% 51%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 40 20% 94%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 20 8% 18%;
-    --input: 20 8% 18%;
-    --ring: 35 60% 68%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 302 99% 51%;
 
     --radius: 0.25rem;
 
     /* Brand colors */
-    --gold: #c9a96e;
-    --gold-light: #e5cfa0;
-    --dark: #0f0d0b;
-    --dark-2: #1a1713;
-    --dark-3: #252118;
-    --text-primary: #f0ebe2;
-    --text-muted: #8a8070;
+    --accent-color: #fe0cf6;
+    --accent-glow: rgba(254, 12, 246, 0.25);
+    --dark: #0a0a0a;
+    --dark-2: #111111;
+    --dark-3: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-muted: #888888;
   }
 }
 
@@ -52,7 +52,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Golos Text", sans-serif;
+    font-family: "Montserrat", sans-serif;
     background-color: var(--dark);
     color: var(--text-primary);
   }
@@ -60,7 +60,7 @@
   h1,
   h2,
   h3 {
-    font-family: "Cormorant", serif;
+    font-family: "Montserrat", sans-serif;
   }
 }
 
@@ -82,15 +82,6 @@
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
   }
 }
 
@@ -121,77 +112,65 @@
   animation-delay: 0.6s;
 }
 
-.opacity-0-init {
-  opacity: 0;
+/* Accent helpers */
+.accent-text {
+  color: var(--accent-color);
+}
+.accent-border {
+  border-color: var(--accent-color);
 }
 
-.gold-text {
-  color: var(--gold);
-}
-
-.gold-border {
-  border-color: var(--gold);
-}
-
+/* Buttons */
 .btn-gold {
-  background-color: var(--gold);
-  color: var(--dark);
-  font-family: "Golos Text", sans-serif;
-  font-weight: 600;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   transition: all 0.3s ease;
 }
 
 .btn-gold:hover {
-  background-color: var(--gold-light);
+  background-color: #ff40fc;
   transform: translateY(-1px);
-  box-shadow: 0 8px 30px rgba(201, 169, 110, 0.25);
+  box-shadow: 0 8px 30px var(--accent-glow);
 }
 
 .btn-outline-gold {
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  font-family: "Golos Text", sans-serif;
-  font-weight: 600;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   transition: all 0.3s ease;
   background: transparent;
 }
 
 .btn-outline-gold:hover {
-  background-color: var(--gold);
-  color: var(--dark);
+  background-color: var(--accent-color);
+  color: #ffffff;
   transform: translateY(-1px);
+  box-shadow: 0 8px 30px var(--accent-glow);
 }
 
 .section-label {
-  font-family: "Golos Text", sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--accent-color);
 }
 
 .divider-gold {
   width: 40px;
   height: 1px;
-  background-color: var(--gold);
+  background-color: var(--accent-color);
   display: inline-block;
-}
-
-/* Noise texture overlay */
-.noise-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  opacity: 0.04;
-  z-index: 0;
 }
 
 .card-hover {
@@ -201,7 +180,7 @@
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 /* Scrollbar */
@@ -212,6 +191,6 @@
   background: var(--dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--gold);
+  background: var(--accent-color);
   border-radius: 2px;
 }
