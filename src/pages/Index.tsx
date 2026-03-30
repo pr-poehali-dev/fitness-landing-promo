@@ -111,14 +111,14 @@ const Index = () => {
       </section>
 
       {/* ПРЕИМУЩЕСТВА */}
-      <section className="py-28 px-8" style={{ backgroundColor: "var(--dark-2)" }}>
+      <section className="py-28 px-8" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <span className="section-label block mb-4">Почему LAB SPACE</span>
-            <h2 className="font-black uppercase" style={{ fontFamily: M, fontSize: "clamp(2rem, 4vw, 3rem)" }}>Преимущества студии</h2>
+            <span className="section-label block mb-4" style={{ color: A }}>Почему LAB SPACE</span>
+            <h2 className="font-black uppercase" style={{ fontFamily: M, fontSize: "clamp(2rem, 4vw, 3rem)", color: "#0a0a0a" }}>Преимущества студии</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style={{ border: "1px solid var(--border)" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style={{ border: "1px solid #e5e5e5" }}>
             {[
               { icon: "Dumbbell", title: "12+ направлений", text: "Йога, стретчинг, TRX, пилатес, табата, МФР — найдёте то, что подходит именно вам" },
               { icon: "Users", title: "Малые группы", text: "До 12 человек в группе — тренер уделяет внимание каждому и контролирует технику" },
@@ -127,14 +127,16 @@ const Index = () => {
               { icon: "Calendar", title: "Гибкое расписание", text: "Тренировки утром, днём и вечером. Легко совместить с работой и семьёй" },
               { icon: "Shield", title: "Безопасные тренировки", text: "Программы адаптированы под уровень подготовки. Подойдёт с нуля" },
             ].map((item, i) => (
-              <div key={i} className="p-10 card-hover"
-                style={{ backgroundColor: "var(--dark-2)", borderRight: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+              <div key={i} className="p-10"
+                style={{ backgroundColor: "#ffffff", borderRight: "1px solid #e5e5e5", borderBottom: "1px solid #e5e5e5" }}
+                onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#fafafa")}
+                onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#ffffff")}>
                 <div className="w-10 h-10 flex items-center justify-center mb-6"
                   style={{ backgroundColor: "rgba(254,12,246,0.08)", border: "1px solid rgba(254,12,246,0.25)", borderRadius: "2px" }}>
                   <Icon name={item.icon} fallback="Star" size={18} style={{ color: A }} />
                 </div>
-                <h3 className="mb-3 font-bold uppercase text-base" style={{ fontFamily: M }}>{item.title}</h3>
-                <p className="text-sm leading-relaxed font-light" style={{ color: "var(--text-muted)", fontFamily: M }}>{item.text}</p>
+                <h3 className="mb-3 font-bold uppercase text-base" style={{ fontFamily: M, color: "#0a0a0a" }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed font-light" style={{ color: "#666666", fontFamily: M }}>{item.text}</p>
               </div>
             ))}
           </div>
