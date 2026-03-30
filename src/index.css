@@ -32,7 +32,7 @@
     --input: 0 0% 14%;
     --ring: 302 99% 51%;
 
-    --radius: 0.25rem;
+    --radius: 2rem;
 
     /* Brand colors */
     --accent-color: #fe0cf6;
@@ -130,6 +130,7 @@
   text-transform: uppercase;
   font-size: 0.7rem;
   transition: all 0.3s ease;
+  border-radius: 9999px;
 }
 
 .btn-gold:hover {
@@ -148,6 +149,7 @@
   font-size: 0.7rem;
   transition: all 0.3s ease;
   background: transparent;
+  border-radius: 9999px;
 }
 
 .btn-outline-gold:hover {
