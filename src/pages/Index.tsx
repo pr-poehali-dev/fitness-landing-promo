@@ -196,47 +196,74 @@ const Index = () => {
       </section>
 
       {/* ФОТО СТУДИИ И ТРЕНЕРОВ */}
-      <section id="студия" className="py-28 px-8" style={{ backgroundColor: "var(--dark)" }}>
+      <section id="студия" className="py-28 px-8 overflow-hidden" style={{ backgroundColor: "var(--dark)" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="mb-20">
-            <span className="section-label block mb-4">Атмосфера</span>
-            <h2 className="font-black uppercase" style={{ fontFamily: M, fontSize: "clamp(2rem, 4vw, 3rem)" }}>Студия и тренеры</h2>
+
+          {/* Заголовок */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <span className="section-label block mb-4">Атмосфера</span>
+              <h2 className="font-black uppercase" style={{ fontFamily: M, fontSize: "clamp(2rem, 4vw, 3rem)" }}>Студия и тренеры</h2>
+            </div>
+            <p className="text-sm font-light max-w-xs" style={{ color: "var(--text-muted)", fontFamily: M }}>
+              Камерное пространство, где каждая деталь создана для вашего прогресса
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
-            <div className="col-span-2 overflow-hidden" style={{ height: "480px", borderRadius: "2px" }}>
-              <img src={STUDIO_IMG} alt="Студия LAB SPACE" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-            </div>
-            <div className="flex flex-col gap-4">
-              <div className="overflow-hidden flex-1" style={{ borderRadius: "2px" }}>
-                <img src={TRAINER_IMG} alt="Тренер LAB SPACE" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+          {/* Коллаж фото */}
+          <div className="grid grid-cols-12 grid-rows-2 gap-3 mb-20" style={{ height: "500px" }}>
+            <div className="col-span-7 row-span-2 overflow-hidden rounded-3xl relative group">
+              <img src={STUDIO_IMG} alt="Студия LAB SPACE" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute bottom-6 left-6 px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(0,0,0,0.6)", backdropFilter: "blur(10px)", border: "1px solid rgba(255,255,255,0.1)" }}>
+                <span className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#fff", fontFamily: M }}>Зал тренировок</span>
               </div>
-              <div className="overflow-hidden flex-1" style={{ borderRadius: "2px" }}>
-                <img src={GROUP_IMG} alt="Групповая тренировка" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+            </div>
+            <div className="col-span-5 row-span-1 overflow-hidden rounded-3xl relative group">
+              <img src={TRAINER_IMG} alt="Тренер" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div className="col-span-5 row-span-1 overflow-hidden rounded-3xl relative group">
+              <img src={GROUP_IMG} alt="Групповая тренировка" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute bottom-4 left-4 px-4 py-2 rounded-full" style={{ backgroundColor: A }}>
+                <span className="text-xs font-bold tracking-wider uppercase" style={{ color: "#fff", fontFamily: M }}>Группа</span>
               </div>
             </div>
           </div>
 
-          <div id="тренеры" className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: "Анна Соколова", role: "Йога · Медитация", exp: "8 лет опыта" },
-              { name: "Мария Лебедева", role: "Стретчинг · TRX", exp: "6 лет опыта" },
-              { name: "Елена Кузнецова", role: "Пилатес · МФР", exp: "5 лет опыта" },
-            ].map((t, i) => (
-              <div key={i} className="group">
-                <div className="overflow-hidden mb-5" style={{ height: "320px", borderRadius: "2px" }}>
-                  <img src={TRAINER_IMG} alt={t.name} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="mb-1 font-bold" style={{ fontFamily: M, fontSize: "1rem" }}>{t.name}</h3>
-                    <p className="text-xs tracking-wider uppercase font-semibold" style={{ color: A, fontFamily: M }}>{t.role}</p>
+          {/* Тренеры */}
+          <div id="тренеры">
+            <div className="flex items-center gap-4 mb-10">
+              <h3 className="font-black uppercase" style={{ fontFamily: M, fontSize: "1.5rem" }}>Наши тренеры</h3>
+              <div className="flex-1 h-px" style={{ backgroundColor: "var(--border)" }} />
+              <span className="text-xs tracking-widest uppercase" style={{ color: "var(--text-muted)", fontFamily: M }}>3 специалиста</span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {[
+                { name: "Анна Соколова", role: "Йога · Медитация", exp: "8 лет", tags: ["Хатха", "Виньяса", "Нидра"] },
+                { name: "Мария Лебедева", role: "Стретчинг · TRX", exp: "6 лет", tags: ["Растяжка", "Функционал", "Табата"] },
+                { name: "Елена Кузнецова", role: "Пилатес · МФР", exp: "5 лет", tags: ["Пилатес", "МФР", "Постура"] },
+              ].map((t, i) => (
+                <div key={i} className="group rounded-3xl overflow-hidden relative" style={{ backgroundColor: "var(--dark-2)", border: "1px solid var(--border)" }}>
+                  <div className="overflow-hidden" style={{ height: "280px" }}>
+                    <img src={TRAINER_IMG} alt={t.name} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: "rgba(0,0,0,0.65)", backdropFilter: "blur(8px)", color: A, fontFamily: M, border: `1px solid ${A}` }}>
+                      {t.exp} опыта
+                    </div>
                   </div>
-                  <span className="text-xs mt-1" style={{ color: "var(--text-muted)", fontFamily: M }}>{t.exp}</span>
+                  <div className="p-6">
+                    <h4 className="font-bold mb-1" style={{ fontFamily: M, fontSize: "1rem" }}>{t.name}</h4>
+                    <p className="text-xs tracking-wider uppercase font-semibold mb-4" style={{ color: A, fontFamily: M }}>{t.role}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {t.tags.map((tag, j) => (
+                        <span key={j} className="text-xs px-3 py-1 rounded-full" style={{ backgroundColor: "var(--dark-3)", color: "var(--text-muted)", fontFamily: M }}>{tag}</span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
         </div>
       </section>
 
