@@ -64,19 +64,19 @@ const Index = () => {
               </span>
             </div>
 
-            <h1 className="mb-6 leading-tight font-black uppercase" style={{ fontFamily: M, fontSize: "clamp(3rem, 7vw, 5.5rem)", color: "var(--text-primary)" }}>
+            <h1 className="mb-6 leading-tight font-black uppercase" style={{ fontFamily: M, fontSize: "clamp(3rem, 7vw, 5.5rem)", color: "#ffffff", textShadow: "0 0 40px rgba(255,255,255,0.15)" }}>
               3 месяца<br />
               <span style={{ color: A }}>в подарок</span>
             </h1>
 
-            <p className="mb-4 text-base leading-relaxed font-light" style={{ color: "var(--text-muted)", fontFamily: M, maxWidth: "480px" }}>
+            <p className="mb-4 text-base leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.75)", fontFamily: M, maxWidth: "480px" }}>
               При покупке абонемента на 12 месяцев — получаете 3 месяца в подарок. Это 25% экономии на весь год.
             </p>
 
             <div className="flex items-center gap-3 mb-10">
-              <div className="divider-gold"></div>
-              <span className="text-sm" style={{ color: "var(--text-muted)", fontFamily: M }}>
-                Пробная тренировка от <strong style={{ color: A }}>500 ₽</strong>
+              <div className="h-px w-12" style={{ backgroundColor: "rgba(255,255,255,0.3)" }}></div>
+              <span className="text-sm" style={{ color: "rgba(255,255,255,0.6)", fontFamily: M }}>
+                Пробная тренировка от <strong style={{ color: "#ffffff" }}>500 ₽</strong>
               </span>
             </div>
 
